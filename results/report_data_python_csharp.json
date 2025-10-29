@@ -1,0 +1,18 @@
+{
+  "complexity_analysis": {
+    "big_o": "O(n log n)",
+    "big_omega": "\u03a9(n log n)",
+    "big_theta": "\u0398(n log n)",
+    "space_complexity": "O(n)"
+  },
+  "best_case": "O(n log n) - Array j\u00e1 ordenado",
+  "worst_case": "O(n log n) - Qualquer configura\u00e7\u00e3o",
+  "average_case": "O(n log n) - Distribui\u00e7\u00e3o aleat\u00f3ria",
+  "p_class": "Sim, pertence \u00e0 classe P",
+  "np_analysis": "N\u00e3o existe vers\u00e3o NP do Merge Sort",
+  "languages_compared": [
+    "Python",
+    "C#"
+  ],
+  "experimental_validation": "Complexidade O(n log n) confirmada experimentalmente em ambas as linguagens"
+}

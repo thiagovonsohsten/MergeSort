@@ -1,0 +1,14 @@
+{
+  "complexity_analysis": {
+    "big_o": "O(n log n)",
+    "big_omega": "\u03a9(n log n)",
+    "big_theta": "\u0398(n log n)",
+    "space_complexity": "O(n)"
+  },
+  "best_case": "O(n log n) - Array ja ordenado",
+  "worst_case": "O(n log n) - Qualquer configuracao",
+  "average_case": "O(n log n) - Distribuicao aleatoria",
+  "p_class": "Sim, pertence a classe P",
+  "np_analysis": "Nao existe versao NP do Merge Sort",
+  "experimental_validation": "Complexidade O(n log n) confirmada experimentalmente"
+}

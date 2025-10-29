@@ -1,0 +1,15 @@
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\bin\Release\net9.0\MergeSortApp.exe
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\bin\Release\net9.0\MergeSortApp.deps.json
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\bin\Release\net9.0\MergeSortApp.runtimeconfig.json
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\bin\Release\net9.0\MergeSortApp.dll
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\bin\Release\net9.0\MergeSortApp.pdb
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.AssemblyInfoInputs.cache
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.AssemblyInfo.cs
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.csproj.CoreCompileInputs.cache
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.sourcelink.json
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.dll
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\refint\MergeSortApp.dll
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.pdb
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\MergeSortApp.genruntimeconfig.cache
+C:\Users\thiag\Desktop\MergeSort\temp_csharp\MergeSortApp\obj\Release\net9.0\ref\MergeSortApp.dll

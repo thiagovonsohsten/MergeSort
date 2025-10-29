@@ -94,36 +94,34 @@ class PerformanceAnalyzerPythonCSharp:
                 ], cwd=temp_dir / "MergeSortApp", capture_output=True, text=True)
                 
                 if result.returncode == 0:
-                        print("Código C# compilado com dotnet!")
-                        # Procura o executável na estrutura padrão do dotnet
-                        possible_paths = [
-                            temp_dir / "MergeSortApp" / "bin" / "Release" / "net8.0" / "wc.exe",
-                            temp_dir / "MergeSortApp" / "bin" / "Release" / "net9.0" / "wc.exe",
-                            temp_dir / "MergeSortApp" / "bin" / "Release" / "net8.0" / "MergeSortApp.exe",
-                            temp_dir / "MergeSortApp" / "bin" / "Release" / "net9.0" / "MergeSortApp.exe",
-                        ]
-                        
-                        for path in possible_paths:
-                            if path.exists():
-                                executable = path
-                                break
-                        
-                        if executable is None:
-                            # Lista arquivos para debug
-                            import os
-                            release_dir = temp_dir / "MergeSortApp" / "bin" / "Release"
-                            if release_dir.exists():
-                                for root, dirs, files in os.walk(release_dir):
-                                    for file in files:
-                                        if file.endswith('.exe'):
-                                            executable = Path(root) / file
-                                            break
-                    else:
-                        print(f"Erro ao compilar C# com dotnet: {result.stderr}")
-                        return
+                    print("Código C# compilado com dotnet!")
+                    # Procura o executável na estrutura padrão do dotnet
+                    possible_paths = [
+                        temp_dir / "MergeSortApp" / "bin" / "Release" / "net8.0" / "MergeSortApp.exe",
+                        temp_dir / "MergeSortApp" / "bin" / "Release" / "net9.0" / "MergeSortApp.exe",
+                    ]
+                    
+                    for path in possible_paths:
+                        if path.exists():
+                            executable = path
+                            break
+                    
+                    if executable is None:
+                        # Lista arquivos para debug
+                        import os
+                        release_dir = temp_dir / "MergeSortApp" / "bin" / "Release"
+                        if release_dir.exists():
+                            for root, dirs, files in os.walk(release_dir):
+                                for file in files:
+                                    if file.endswith('.exe'):
+                                        executable = Path(root) / file
+                                        break
                 else:
-                    print(f"Erro ao criar projeto dotnet: {result.stderr}")
+                    print(f"Erro ao compilar C# com dotnet: {result.stderr}")
                     return
+            else:
+                print(f"Erro ao criar projeto dotnet: {result.stderr}")
+                return
                 
         except FileNotFoundError:
             print("Erro: dotnet CLI não encontrado!")
@@ -196,10 +194,11 @@ class PerformanceAnalyzerPythonCSharp:
                     stds = []
                     
                     for size in self.sizes:
-                        if size in self.results[language][data_type]:
+                        size_key = str(size)  # Converte para string para comparar com as chaves do JSON
+                        if size_key in self.results[language][data_type]:
                             sizes.append(size)
-                            means.append(self.results[language][data_type][size]['mean'])
-                            stds.append(self.results[language][data_type][size]['std'])
+                            means.append(self.results[language][data_type][size_key]['mean'])
+                            stds.append(self.results[language][data_type][size_key]['std'])
                     
                     ax.errorbar(sizes, means, yerr=stds, 
                               label=f'{language.upper()}', 
@@ -233,14 +232,15 @@ class PerformanceAnalyzerPythonCSharp:
             csharp_times = []
             
             for size in self.sizes:
+                size_key = str(size)  # Converte para string para comparar com as chaves do JSON
                 if (('python' in self.results and data_type in self.results['python'] and 
-                     size in self.results['python'][data_type]) and
+                     size_key in self.results['python'][data_type]) and
                     ('csharp' in self.results and data_type in self.results['csharp'] and 
-                     size in self.results['csharp'][data_type])):
+                     size_key in self.results['csharp'][data_type])):
                     
                     sizes.append(size)
-                    python_times.append(self.results['python'][data_type][size]['mean'])
-                    csharp_times.append(self.results['csharp'][data_type][size]['mean'])
+                    python_times.append(self.results['python'][data_type][size_key]['mean'])
+                    csharp_times.append(self.results['csharp'][data_type][size_key]['mean'])
             
             if sizes:
                 plt.plot(sizes, python_times, 'o-', label=f'Python - {data_type}', linewidth=2)
